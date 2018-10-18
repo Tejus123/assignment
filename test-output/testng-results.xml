@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="kindleTesting" duration-ms="140244" started-at="2018-10-18T11:07:48Z" finished-at="2018-10-18T11:10:08Z">
+    <groups>
+    </groups>
+    <test name="testngTest" duration-ms="140244" started-at="2018-10-18T11:07:48Z" finished-at="2018-10-18T11:10:08Z">
+      <class name="amazon.assignment.test.KindleTestDuplicateForParallelExecution">
+        <test-method status="PASS" signature="kindleTest()[pri:0, instance:amazon.assignment.test.KindleTestDuplicateForParallelExecution@6767c1fc]" name="kindleTest" duration-ms="32828" started-at="2018-10-18T16:39:21Z" finished-at="2018-10-18T16:39:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kindleTest -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:amazon.assignment.test.KindleTestDuplicateForParallelExecution@6767c1fc]" name="closeBrowser" is-config="true" duration-ms="3214" started-at="2018-10-18T16:39:53Z" finished-at="2018-10-18T16:39:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- amazon.assignment.test.KindleTestDuplicateForParallelExecution -->
+      <class name="amazon.assignment.test.KindleTest">
+        <test-method status="PASS" signature="initateDriver()[pri:0, instance:amazon.assignment.test.KindleTest@2a2d45ba]" name="initateDriver" is-config="true" duration-ms="48178" started-at="2018-10-18T16:37:48Z" finished-at="2018-10-18T16:38:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initateDriver -->
+        <test-method status="PASS" signature="initateDriver()[pri:0, instance:amazon.assignment.test.KindleTestDuplicateForParallelExecution@6767c1fc]" name="initateDriver" is-config="true" duration-ms="44725" started-at="2018-10-18T16:38:36Z" finished-at="2018-10-18T16:39:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initateDriver -->
+        <test-method status="PASS" signature="kindleTest()[pri:0, instance:amazon.assignment.test.KindleTest@2a2d45ba]" name="kindleTest" duration-ms="44211" started-at="2018-10-18T16:39:21Z" finished-at="2018-10-18T16:40:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- kindleTest -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:amazon.assignment.test.KindleTest@2a2d45ba]" name="closeBrowser" is-config="true" duration-ms="3063" started-at="2018-10-18T16:40:05Z" finished-at="2018-10-18T16:40:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- amazon.assignment.test.KindleTest -->
+    </test> <!-- testngTest -->
+  </suite> <!-- kindleTesting -->
+</testng-results>
