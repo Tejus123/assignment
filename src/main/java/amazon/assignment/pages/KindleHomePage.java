@@ -48,11 +48,6 @@ public class KindleHomePage extends WebBasePage{
 
 	@Override
 	public void waitForPageLoad() {
-		try {
-			WebDriverWait wait=new WebDriverWait(webDriver,40);
-			wait.until(ExpectedConditions.presenceOfElementLocated(KINDLEPAPERWHITE));
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+		HelperPage.waitForPageLoad(KINDLEPAPERWHITE);
 	}	
 }

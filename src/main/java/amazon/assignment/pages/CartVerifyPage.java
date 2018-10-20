@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import amazon.assignment.util.HelperPage;
 import amazon.assignment.util.WebBasePage;
 
 public class CartVerifyPage extends WebBasePage{
@@ -32,11 +33,6 @@ public class CartVerifyPage extends WebBasePage{
 
 	@Override
 	public void waitForPageLoad() {
-		try {
-			WebDriverWait wait=new WebDriverWait(webDriver,40);
-			wait.until(ExpectedConditions.presenceOfElementLocated(PROCEEDTOCHECKOUT));
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+		HelperPage.waitForPageLoad(PROCEEDTOCHECKOUT);
 	}	
 }

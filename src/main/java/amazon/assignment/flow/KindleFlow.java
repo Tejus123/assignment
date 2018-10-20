@@ -39,8 +39,7 @@ public class KindleFlow {
 		CartVerifyPage cart=new CartVerifyPage(webDriver, testName);
 		cart.clickProceedToCheckout();
 		AmazonLoginPage login=new AmazonLoginPage(webDriver, testName);
-		Assert.assertTrue("Login text label not matched", login.verifySigninText());
-		Assert.assertTrue("Login Input box not displayed", login.verifySigninBox());
+		login.verifySigninText().verifySigninBox();
 	}
 
 

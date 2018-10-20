@@ -7,12 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import amazon.assignment.util.HelperPage;
 import amazon.assignment.util.WebBasePage;
 
 public class AmazonHomePage extends WebBasePage{
 	private WebDriver webDriver=null;
 	private String testName="";
-	private final By SHOPBYDEPARTMENT=By.xpath("//a[@id='nav-link-shopall']");
+	private final By SHOPBYDEPARTMENT=By.id("nav-link-shopall");
 	
 	public AmazonHomePage(WebDriver webDriver, String testName) {
 		this.webDriver=webDriver;
@@ -32,11 +33,8 @@ public class AmazonHomePage extends WebBasePage{
 
 	@Override
 	public void waitForPageLoad() {
-		try {
-			WebDriverWait wait=new WebDriverWait(webDriver,40);
-			wait.until(ExpectedConditions.presenceOfElementLocated(SHOPBYDEPARTMENT));
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-	}	
+		HelperPage.waitForPageLoad(SHOPBYDEPARTMENT);
+	}
+
+	
 }

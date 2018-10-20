@@ -11,6 +11,7 @@ import java.util.Date;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +20,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HelperPage {
 	static WebDriver webDriver;
@@ -30,25 +33,25 @@ public class HelperPage {
 	 * @return 
 	 * @return 
 	 */
-	public static WebDriver setEnvironment(WebDriver webDriver,String BrowName ) { 
+	public static WebDriver setEnvironment(WebDriver webDriver,String BrowserName ) { 
 		
-		if (BrowName.equalsIgnoreCase("Chrome"))
+		if (BrowserName.equalsIgnoreCase("Chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver","D:\\Selenium Softwares\\chromedriver\\chromedriver.exe");
 			webDriver = new ChromeDriver();
 			return webDriver;
 		}
-		else if(BrowName.equalsIgnoreCase("Safari"))
+		else if(BrowserName.equalsIgnoreCase("Safari"))
 		{
 			System.setProperty("webdriver.chrome.driver","D:\\Selenium Softwares\\chromedriver\\chromedriver.exe");
 			webDriver = new SafariDriver();	
 		}
-		else if(BrowName.equalsIgnoreCase("FireFox"))
+		else if(BrowserName.equalsIgnoreCase("FireFox"))
 		{
 			System.setProperty("webdriver.chrome.driver","D:\\Selenium Softwares\\chromedriver\\chromedriver.exe");
 			webDriver = new FirefoxDriver();	
 		}
-		else if (BrowName.equalsIgnoreCase("IE"))
+		else if (BrowserName.equalsIgnoreCase("IE"))
 		{
 			System.setProperty("webdriver.IE.driver","D:\\Selenium Softwares\\IEDriverServer_x64_3.8.0\\IEDriverServer.exe");
 			webDriver = new InternetExplorerDriver();
@@ -178,30 +181,18 @@ public class HelperPage {
 		   LocalDateTime now = LocalDateTime.now();
 		return dtf.format(now);
 	}
-	public void BrosweSelect(String BrowName)
-	{
-		if (BrowName.equalsIgnoreCase("Chrome"))
-		{
-			
+
+	/**
+	 * Method for wait for Page load
+	 * @param element
+	 */
+	public static void waitForPageLoad(By element) {
+		try {
+			WebDriverWait wait=new WebDriverWait(webDriver,40);
+			wait.until(ExpectedConditions.presenceOfElementLocated(element));
+		}catch(Exception e){
+			e.printStackTrace();
 		}
-		else if(BrowName.equalsIgnoreCase("Safari"))
-		{
-			
-		}
-		else if(BrowName.equalsIgnoreCase("FireFox"))
-		{
-				
-		}
-		else if (BrowName.equalsIgnoreCase("IE"))
-		{
-			
-		}
-		else 
-		{
-			System.out.println("Please select proper browser");
-		}
-	}
-	
-	
+	}	
 
 }

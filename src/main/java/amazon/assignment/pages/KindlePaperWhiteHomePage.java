@@ -16,8 +16,9 @@ import amazon.assignment.util.WebBasePage;
 public class KindlePaperWhiteHomePage extends WebBasePage{
 	private WebDriver webDriver=null;
 	private String testName="";
-	private final By QUANTITY=By.xpath("//select[@name='quantity']");
-	private final By ADDTOCART=By.xpath("//input[@id='add-to-cart-button']");
+	private final By QUANTITY=By.id("quantity");
+	private final By ADDTOCART=By.id("add-to-cart-button");
+	
 	private final By CLOSE=By.xpath("//button[@aria-label='Close']");
 	public KindlePaperWhiteHomePage(WebDriver webDriver, String testName) {
 		this.webDriver=webDriver;
@@ -62,12 +63,7 @@ public class KindlePaperWhiteHomePage extends WebBasePage{
 
 	@Override
 	public void waitForPageLoad() {
-		try {
-			WebDriverWait wait=new WebDriverWait(webDriver,40);
-			wait.until(ExpectedConditions.presenceOfElementLocated(ADDTOCART));
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+		HelperPage.waitForPageLoad(ADDTOCART);
 	}
 	
 }
